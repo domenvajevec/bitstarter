@@ -78,8 +78,7 @@ if(require.main == module) {
 
   if(program.url){
     var getHTML = rest.get(program.url).on('complete', function(result, response){
-      console.log("in program url");
-
+  
       fs.writeFileSync(outfile, result);
       var cheerioUrl = function(HTMLFromURL){
         return cheerio.load(fs.readFileSync(HTMLFromURL));
